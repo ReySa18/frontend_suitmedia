@@ -73,7 +73,7 @@
 
     <footer class="bg-gray-800 text-white py-12">
       <div class="container mx-auto px-4 text-center">
-        <p>© 2023 Ideas Platform. All rights reserved.</p>
+        <p>Oleh: REYMONDO SAPUTRA S - MAGANG BERDAMPAK</p>
       </div>
     </footer>
   </div>
