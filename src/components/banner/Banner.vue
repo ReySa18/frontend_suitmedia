@@ -1,6 +1,6 @@
 <template>
   <div class="relative h-[60vh] min-h-[400px] overflow-hidden">
-    <!-- Background image dengan efek parallax -->
+ 
     <div 
       ref="backgroundElement"
       class="absolute inset-0 bg-cover bg-center transition-all duration-300 z-0"
@@ -12,7 +12,7 @@
       }"
     ></div>
 
-    <!-- Overlay dengan teks -->
+ 
     <div 
       class="absolute inset-0 flex items-center justify-center z-20"
       :style="{ transform: `translateY(${textParallaxOffset}px)` }"
@@ -23,10 +23,10 @@
       </div>
     </div>
 
-    <!-- Gradient overlay untuk transisi ke area miring -->
+
     <div class="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-white"></div>
 
-    <!-- Area miring di bagian bawah (diperbesar) -->
+
     <div class="skew-bottom bg-white z-40"></div>
   </div>
 </template>
@@ -68,10 +68,10 @@ onUnmounted(() => {
   bottom: -1px;
   left: 0;
   right: 0;
-  height: 25vh; /* Diperbesar untuk kemiringan lebih curam */
+  height: 25vh; 
   background: white;
   
-  /* Kemiringan ekstrem (hampir setengah banner) */
+
   clip-path: polygon(0 40%, 100% 0, 100% 100%, 0% 100%);
   
   z-index: 40;
