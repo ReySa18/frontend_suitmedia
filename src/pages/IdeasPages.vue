@@ -88,8 +88,8 @@ import BannerSection from '@/components/banner/Banner.vue'
 import IdeaCard from '@/components/IdeaCard.vue'
 import PaginationControls from '@/components/Pagination.vue'
 
+const API_BASE_URL = import.meta.env.VITE_API_URL
 
-// State
 const ideas = ref([])
 const loading = ref(true)
 const totalIdeas = ref(0)
@@ -118,9 +118,9 @@ const fetchIdeas = async () => {
     params.append('append[]', 'medium_image')
     params.set('sort', sortBy.value)
 
-    console.log('Fetching:', `/api/ideas?${params}`)
+    console.log('Fetching:',`${API_BASE_URL}/ideas?${params}`)
 
-    const response = await fetch(`/api/ideas?${params}`, {
+    const response = await fetch(`${API_BASE_URL}/ideas?${params}`, {
       headers: {
         'Accept': 'application/json'
       }
@@ -139,7 +139,7 @@ const fetchIdeas = async () => {
 
     ideas.value = data.data
 
-    // Pakai fallback aman
+
     totalIdeas.value = data.meta?.pagination?.total || data.data.length
 
   } catch (error) {
@@ -159,10 +159,9 @@ const handlePageChange = (page) => {
   }
 }
 
-// Watch perubahan param
 watch([currentPage, itemsPerPage, sortBy], fetchIdeas)
 
-// State URL
+
 onMounted(() => {
   const urlParams = new URLSearchParams(window.location.search)
   const page = urlParams.get('page')

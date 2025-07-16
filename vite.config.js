@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath, URL } from 'node:url'
 
-// https://vite.dev/config/
+
 export default defineConfig({
   plugins: [
     tailwindcss(),
@@ -19,7 +19,6 @@ export default defineConfig({
       '/api': {
         target: 'https://suitmedia-backend.suitdev.com',
         changeOrigin: true,
-        //rewrite: path => path.replace(/^\/api/, ''),
       },
     },
   },
